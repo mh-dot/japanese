@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>জাপানি N5 – জটিল বাক্য কার্ড</title>
+<style>
+:root{--bg:#eef1f6;--card:#fff;--ink:#1c2233;--sub:#5b6478;--line:#d9dfe9;--pol:#2a4a9a;--polbg:#e8eefc;--pla:#2f6b4f;--plabg:#e6f3ec;--pic:#f2ecdf}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#12161f;--card:#1b2130;--ink:#eef1f8;--sub:#9aa5bd;--line:#2c3448;--pol:#8fb0ff;--polbg:#222c4a;--pla:#7fd0a6;--plabg:#1f3a2e;--pic:#2a2a30}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Noto Sans Bengali","Segoe UI",sans-serif;line-height:1.5}
+header{padding:28px 16px 8px;text-align:center}
+h1{margin:0;font-size:26px}
+header p{margin:6px auto 0;max-width:560px;color:var(--sub);font-size:14px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+.theme,.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--card)}
+.theme button,.seg button{border:0;background:transparent;color:var(--ink);padding:7px 18px;font:inherit;font-size:14px;cursor:pointer}
+.theme button[aria-pressed="true"]{background:var(--pol);color:var(--card);font-weight:600}
+.seg button[aria-pressed="true"]{background:var(--pla);color:var(--card);font-weight:600}
+.theme button:focus-visible,.seg button:focus-visible,select:focus-visible{outline:3px solid var(--pol);outline-offset:-3px}
+select{border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--ink);font:inherit;font-size:14px;padding:7px 14px;cursor:pointer}
+#cnt{width:100%;font-size:14px;font-weight:600}
+#vinfo{width:100%;font-size:12px;color:var(--sub)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;padding:16px;max-width:1200px;margin:auto}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card.fin{border-color:var(--pla);box-shadow:0 0 0 1px var(--pla)}
+.front,.back{display:flex;flex-direction:column;flex:1}
+[hidden]{display:none!important}
+.fp{animation:fp .35s ease}
+@keyframes fp{from{transform:rotateY(80deg);opacity:.2}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.fp{animation:none}}
+.mk{position:absolute;right:8px;top:8px;z-index:2;display:flex;gap:4px}
+.mk button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:15px;padding:0}
+.mk .st[aria-pressed="true"]{color:#e0a52b;border-color:#e0a52b}
+.mk .dn[aria-pressed="true"]{color:var(--pla);border-color:var(--pla)}
+.pic{background:var(--pic);text-align:center;font-size:72px;line-height:1.3;padding:10px 0 4px;position:relative}
+.pic b{position:absolute;left:10px;top:8px;font-size:13px;color:var(--sub);font-weight:600}
+.meta{padding:10px 14px 4px;text-align:center}
+.tag{display:inline-block;font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:99px;padding:1px 10px}
+.mean{margin:6px 0 0;font-size:15px;font-weight:600}
+.wd{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 12px 0}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;padding:3px 9px;cursor:pointer;font:inherit;font-size:14px;display:flex;flex-direction:column;align-items:center;line-height:1.35}
+.chip small{font-size:11.5px;color:var(--sub)}
+.chip:hover{border-color:var(--pol)}
+.form{margin:10px 12px 0;padding:10px 12px;border-radius:10px;position:relative}
+.pol{background:var(--polbg);border-left:4px solid var(--pol)}
+.pla{background:var(--plabg);border-left:4px solid var(--pla)}
+.lab{font-size:12.5px;font-weight:700}
+.pol .lab{color:var(--pol)}
+.pla .lab{color:var(--pla)}
+.jp{font-size:20px;margin:2px 36px 2px 0}
+.k1 .jp{line-height:2.2}
+.ro{font-size:13.5px;font-style:italic;color:var(--sub)}
+.bn{font-size:14.5px}
+.gr{font-size:12.5px;color:var(--sub);margin-top:4px}
+rt{font-size:.5em;color:var(--sub)}
+.w{border-radius:4px;padding:0 2px;transition:background .12s,color .12s}
+.pol .w.hl{background:var(--pol);color:var(--card)}
+.pla .w.hl{background:var(--pla);color:var(--card)}
+.w.hl rt{color:inherit}
+.sp{position:absolute;right:8px;top:8px;width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;font-size:16px;color:var(--card)}
+.pol .sp{background:var(--pol)}
+.pla .sp{background:var(--pla)}
+.both{margin:12px;padding:9px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+.fl{margin:0 12px 12px;padding:9px;border:1px solid var(--pol);border-radius:10px;background:transparent;color:var(--pol);font:inherit;font-size:14px;cursor:pointer}
+.sp:hover,.both:hover,.fl:hover,.chip:hover{filter:brightness(1.1)}
+.sp:focus-visible,.both:focus-visible,.fl:focus-visible,.mk button:focus-visible,.chip:focus-visible{outline:3px solid var(--pol);outline-offset:2px}
+.on{outline:3px solid #e0a52b}
+.back{padding:14px;gap:10px}
+.qt,.qs{display:flex;flex-wrap:wrap;gap:6px}
+.qt button,.qs button,.bk{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:9px;padding:7px 10px;font:inherit;font-size:13.5px;cursor:pointer}
+.qt button{flex:1}
+.qt button[aria-pressed="true"]{background:var(--pol);color:var(--card);border-color:var(--pol)}
+.qp{text-align:center;background:var(--pic);border-radius:10px;padding:10px}
+.qe{font-size:52px;line-height:1.2}
+.qm{font-size:16px;font-weight:600;line-height:1.9}
+.qa{display:flex;flex-direction:column;gap:6px}
+.qa button{width:100%;text-align:left;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:9px;padding:8px 10px;font:inherit;font-size:15px;cursor:pointer}
+.qa button.ans{border-color:var(--pla);color:var(--pla);font-weight:700}
+.qa button.bad{border-color:#d0453a;color:#d0453a}
+.qa button:disabled{opacity:1;cursor:default}
+.qi{width:100%;padding:10px;font:inherit;font-size:17px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}
+.qr{min-height:3.2em;font-size:15px;line-height:1.9}
+.qr .ok{color:var(--pla);font-weight:700}
+.qr .no{color:#d0453a;font-weight:700}
+.bk{margin-top:auto}
+button:disabled{cursor:default}
+footer{text-align:center;color:var(--sub);font-size:13px;padding:8px 16px 32px;max-width:640px;margin:auto}
+</style>
+</head>
+<body>
+<header>
+<h1>জাপানি N5 – জটিল বাক্য কার্ড</h1>
+<p>প্রতিটি কার্ডে ছবি, জাপানি বাক্য, বাংলা উচ্চারণ, রোমাজি এবং Polite ও Plain রূপ আলাদাভাবে আছে। 🔊 চাপলে শুনতে পাবেন। ⭐ ফেভারিট, ✓ শেখা হলে চিহ্ন দিন, 🔄 দিয়ে কুইজ খুলুন।</p>
+<div class="bar">
+<div class="theme" role="group" aria-label="থিম"><button data-t="light" aria-pressed="true">☀️ Light</button><button data-t="dark" aria-pressed="false">🌙 Dark</button></div>
+<div class="seg" role="group" aria-label="কাঞ্জি"><button data-k="0" aria-pressed="true">かな</button><button data-k="1" aria-pressed="false">漢字+ふりがな</button></div>
+<select id="rate" aria-label="শোনার গতি"><option value="0.65">🐢 খুব ধীর</option><option value="0.8">N5 গতি (ধীর)</option><option value="1">N4 গতি (মাঝারি)</option><option value="1.2">দ্রুত (স্বাভাবিক)</option></select>
+<select id="flt" aria-label="ফিল্টার"><option value="all">সব কার্ড</option><option value="star">⭐ ফেভারিট</option><option value="todo">বাকি আছে</option><option value="done">✅ শেখা শেষ</option></select>
+<div id="cnt"></div>
+<div id="vinfo"></div>
+</div>
+</header>
+<main class="grid" id="grid"></main>
+<footer>শব্দ না এলে Chrome বা Edge ব্যবহার করুন এবং ডিভাইসে Japanese ভয়েস চালু আছে কিনা দেখুন। বাংলা উচ্চারণ স্বয়ংক্রিয়ভাবে তৈরি, তাই মোটামুটি সঠিক; আসল উচ্চারণ শুনে মিলিয়ে নিন।</footer>
+<script>
+/* emoji|polite|plain|বাংলা অর্থ|বাক্যের গঠন|plain-এ পরিবর্তন */
+const D=`☔|あめ が ふって いる から、 うち に います。|あめ が ふって いる から、 うち に いる。|বৃষ্টি হচ্ছে, তাই বাড়িতে আছি।|から = কারণ|います→いる
+🍜|おなか が すいた から、 ラーメン を たべます。|おなか が すいた から、 ラーメン を たべる。|খিদে পেয়েছে, তাই রামেন খাব।|から = কারণ|たべます→たべる
+☕|コーヒー は すき です が、 ミルク は すき じゃ ありません。|コーヒー は すき だ が、 ミルク は すき じゃ ない。|কফি ভালো লাগে কিন্তু দুধ লাগে না।|が = কিন্তু|です→だ, ありません→ない
+🚉|えき に つく まえ に、 でんわ を します。|えき に つく まえ に、 でんわ を する。|স্টেশনে পৌঁছানোর আগে ফোন করব।|まえに = আগে|します→する
+🚿|ごはん を たべて から、 シャワー を あびます。|ごはん を たべて から、 シャワー を あびる。|ভাত খেয়ে তারপর শাওয়ার নেব।|てから = পরে|あびます→あびる
+📺|ごはん を たべながら、 テレビ を みます。|ごはん を たべながら、 テレビ を みる。|ভাত খেতে খেতে টিভি দেখি।|ながら = একই সময়ে|みます→みる
+🎬|ひま な とき、 えいが を みます。|ひま な とき、 えいが を みる。|অবসরে সিনেমা দেখি।|とき = যখন|みます→みる
+🏖️|うみ へ いって、 およぎたい です。|うみ へ いって、 およぎたい。|সমুদ্রে গিয়ে সাঁতার কাটতে চাই।|て-form + たい|です বাদ
+📖|ともだち が くる まで、 ほん を よんで います。|ともだち が くる まで、 ほん を よんで いる。|বন্ধু আসা পর্যন্ত বই পড়ছি।|まで = পর্যন্ত|います→いる
+🎮|しゅくだい を して から、 ゲーム を します。|しゅくだい を して から、 ゲーム を する。|হোমওয়ার্ক করে তারপর গেম খেলব।|てから = পরে|します→する
+🤒|ねつ が ある から、 がっこう を やすみます。|ねつ が ある から、 がっこう を やすむ。|জ্বর আছে, তাই স্কুলে যাব না।|から = কারণ|やすみます→やすむ
+🚶|バス が こなかった から、 あるいて きました。|バス が こなかった から、 あるいて きた。|বাস আসেনি, তাই হেঁটে এলাম।|ない-past + から|きました→きた
+🥚|スーパー へ いって、 たまご と ぎゅうにゅう を かいます。|スーパー へ いって、 たまご と ぎゅうにゅう を かう。|সুপারশপে গিয়ে ডিম ও দুধ কিনব।|て-form = ক্রমানুসারে|かいます→かう
+🎧|おんがく を ききながら、 さんぽ します。|おんがく を ききながら、 さんぽ する。|গান শুনতে শুনতে হাঁটি।|ながら = একই সময়ে|します→する
+🌸|さくら が さいて いる とき、 こうえん へ いきます。|さくら が さいて いる とき、 こうえん へ いく。|ফুল ফুটলে পার্কে যাই।|とき = যখন|いきます→いく
+💧|あつい から、 みず を のみたい です。|あつい から、 みず を のみたい。|গরম, তাই পানি খেতে চাই।|から + たい|です বাদ
+🌅|あさ ろくじ に おきて、 ごはん を たべます。|あさ ろくじ に おきて、 ごはん を たべる。|সকাল ৬টায় উঠে ভাত খাই।|て-form = ক্রমানুসারে|たべます→たべる
+🎁|ともだち に プレゼント を あげて、 ケーキ を たべました。|ともだち に プレゼント を あげて、 ケーキ を たべた。|বন্ধুকে উপহার দিয়ে কেক খেলাম।|て-form + অতীত|たべました→たべた
+🐱|いぬ は かわいい です が、 ねこ の ほう が すき です。|いぬ は かわいい が、 ねこ の ほう が すき だ。|কুকুর কিউট, কিন্তু বিড়াল বেশি পছন্দ।|が = কিন্তু|です→だ (い-adj এর পরে বাদ)
+⏳|じゅぎょう が おわる まで、 ここ で まって います。|じゅぎょう が おわる まで、 ここ で まって いる。|ক্লাস শেষ না হওয়া পর্যন্ত এখানে অপেক্ষা করছি।|まで = পর্যন্ত|います→いる
+🧂|りょうり を する とき、 しお を つかいます。|りょうり を する とき、 しお を つかう。|রান্না করার সময় লবণ ব্যবহার করি।|とき = যখন|つかいます→つかう
+🌙|よる は しずか です から、 すぐ ねます。|よる は しずか だ から、 すぐ ねる。|রাত শান্ত, তাই তাড়াতাড়ি ঘুমাই।|から + な-adj|です→だ, ねます→ねる
+👟|あたらしい くつ を かって、 きょう はいて います。|あたらしい くつ を かって、 きょう はいて いる。|নতুন জুতো কিনে আজ পরেছি।|て-form = ক্রমানুসারে|います→いる
+☂️|あした は あめ でしょう から、 かさ を もって いきます。|あした は あめ だろう から、 かさ を もって いく。|কাল বৃষ্টি হবে, তাই ছাতা নিয়ে যাব।|でしょう = সম্ভবত|でしょう→だろう, いきます→いく
+✉️|てがみ を かいて、 ゆうびんきょく へ いきます。|てがみ を かいて、 ゆうびんきょく へ いく。|চিঠি লিখে ডাকঘরে যাই।|て-form = ক্রমানুসারে|いきます→いく
+🛁|ねる まえ に、 おふろ に はいります。|ねる まえ に、 おふろ に はいる。|ঘুমানোর আগে গোসল করি।|まえに = আগে|はいります→はいる
+🏃|まいあさ はしって から、 がっこう へ いきます。|まいあさ はしって から、 がっこう へ いく。|প্রতিদিন সকালে দৌড়ে তারপর স্কুলে যাই।|てから = পরে|いきます→いく
+🇯🇵|にほんご を べんきょう して います が、 まだ じょうず じゃ ありません。|にほんご を べんきょう して いる が、 まだ じょうず じゃ ない。|জাপানি পড়ছি, কিন্তু এখনো দক্ষ নই।|が = কিন্তু|います→いる, ありません→ない
+🍎|りんご は あかい です が、 バナナ は きいろい です。|りんご は あかい が、 バナナ は きいろい。|আপেল লাল, কিন্তু কলা হলুদ।|が = কিন্তু|です বাদ
+🍵|おちゃ を のんで から、 べんきょう を はじめます。|おちゃ を のんで から、 べんきょう を はじめる。|চা খেয়ে তারপর পড়া শুরু করব।|てから = পরে|はじめます→はじめる
+📚|としょかん で ほん を かりて、 うち で よみます。|としょかん で ほん を かりて、 うち で よむ。|লাইব্রেরি থেকে বই ধার করে বাড়িতে পড়ি।|て-form = ক্রমানুসারে|よみます→よむ
+🎤|うた を うたったり、 ダンス を したり します。|うた を うたったり、 ダンス を したり する。|কখনো গান গাই, কখনো নাচি।|たり〜たり = কখনো…কখনো…|します→する
+🏊|プール で およいだ こと が あります が、 うみ で は およいだ こと が ありません。|プール で およいだ こと が ある が、 うみ で は およいだ こと が ない。|পুলে সাঁতার কেটেছি, কিন্তু সমুদ্রে কাটিনি।|た こと が ある = অভিজ্ঞতা|あります→ある, ありません→ない
+🗾|なつやすみ に にほん へ いく つもり です。|なつやすみ に にほん へ いく つもり だ。|ছুটিতে জাপান যাওয়ার পরিকল্পনা আছে।|つもり = পরিকল্পনা|です→だ
+🛫|ひこうき の ほう が はやい です から、 ひこうき で いきます。|ひこうき の ほう が はやい から、 ひこうき で いく。|বিমান বেশি দ্রুত, তাই বিমানে যাব।|ほう が + から|です বাদ, いきます→いく
+🥛|ねる まえ に ぎゅうにゅう を のんで も いい です が、 コーヒー は のんで は いけません。|ねる まえ に ぎゅうにゅう を のんで も いい が、 コーヒー は のんで は いけない。|ঘুমের আগে দুধ খাওয়া যায়, কফি যাবে না।|ても いい / ては いけない|です বাদ, いけません→いけない
+💊|あたま が いたい から、 くすり を のんで、 ゆっくり やすみます。|あたま が いたい から、 くすり を のんで、 ゆっくり やすむ。|মাথা ব্যথা, তাই ওষুধ খেয়ে বিশ্রাম নেব।|から + て-form|やすみます→やすむ
+🧹|へや が きたない から、 そうじ を します。|へや が きたない から、 そうじ を する。|ঘর নোংরা, তাই পরিষ্কার করব।|から = কারণ|します→する
+📝|テスト が ある から、 まいにち べんきょう して います。|テスト が ある から、 まいにち べんきょう して いる。|পরীক্ষা আছে, তাই প্রতিদিন পড়ছি।|から = কারণ|います→いる
+🍰|ケーキ を つくる とき、 たまご と さとう を つかいます。|ケーキ を つくる とき、 たまご と さとう を つかう。|কেক বানানোর সময় ডিম ও চিনি লাগে।|とき = যখন|つかいます→つかう
+🚆|くるま が ない から、 でんしゃ で かいしゃ へ いきます。|くるま が ない から、 でんしゃ で かいしゃ へ いく。|গাড়ি নেই, তাই ট্রেনে অফিসে যাই।|から = কারণ|いきます→いく
+🕙|じゅうじ に なる まで、 テレビ を みて いました。|じゅうじ に なる まで、 テレビ を みて いた。|দশটা পর্যন্ত টিভি দেখছিলাম।|まで + ている (অতীত)|いました→いた
+🍣|さかな は すき です が、 にく は あまり すき じゃ ありません。|さかな は すき だ が、 にく は あまり すき じゃ ない。|মাছ পছন্দ, কিন্তু মাংস তেমন নয়।|が, あまり〜ない|です→だ, ありません→ない
+👨‍👩‍👧|かぞく と いっしょ に ごはん を たべて から、 さんぽ に いきます。|かぞく と いっしょ に ごはん を たべて から、 さんぽ に いく。|পরিবারের সাথে খেয়ে তারপর হাঁটতে যাই।|てから = পরে|いきます→いく
+💻|パソコン を つかって、 にほんご を べんきょう します。|パソコン を つかって、 にほんご を べんきょう する。|কম্পিউটার দিয়ে জাপানি পড়ি।|て-form = উপায়|します→する
+🌤️|てんき が いい から、 そと で あそびたい です。|てんき が いい から、 そと で あそびたい。|আবহাওয়া ভালো, তাই বাইরে খেলতে চাই।|から + たい|です বাদ
+🍙|あさごはん を たべない で、 がっこう へ いきました。|あさごはん を たべない で、 がっこう へ いった。|সকালের খাবার না খেয়ে স্কুলে গেলাম।|ない で = না করে|いきました→いった
+🎹|ピアノ を ひく こと が すき です が、 じょうず じゃ ありません。|ピアノ を ひく こと が すき だ が、 じょうず じゃ ない。|পিয়ানো বাজাতে ভালো লাগে, কিন্তু দক্ষ নই।|こと = বিশেষ্য বানায়|です→だ, ありません→ない
+🥱|よる おそく まで おきて いた から、 けさ ねむい です。|よる おそく まで おきて いた から、 けさ ねむい。|রাতে অনেক জেগে ছিলাম, তাই আজ ঘুম পাচ্ছে।|から (অতীত)|です বাদ
+📞|おとうさん に でんわ を かけて から、 ともだち に あいます。|おとうさん に でんわ を かけて から、 ともだち に あう。|বাবাকে ফোন করে তারপর বন্ধুর সাথে দেখা করব।|てから = পরে|あいます→あう
+🍞|パン を かう まえ に、 さいふ を みます。|パン を かう まえ に、 さいふ を みる。|রুটি কেনার আগে মানিব্যাগ দেখি।|まえに = আগে|みます→みる
+🪟|あつい です から、 まど を あけて も いい です。|あつい から、 まど を あけて も いい。|গরম, তাই জানালা খুলতে পারি।|ても いい = অনুমতি|です বাদ
+🎒|かばん の なか に ノート と ペン が あります が、 ほん は ありません。|かばん の なか に ノート と ペン が ある が、 ほん は ない。|ব্যাগে খাতা ও কলম আছে, কিন্তু বই নেই।|が = কিন্তু|あります→ある, ありません→ない
+🧑‍🏫|せんせい が はなして いる とき、 ノート に かきます。|せんせい が はなして いる とき、 ノート に かく。|শিক্ষক বলার সময় খাতায় লিখি।|とき = যখন|かきます→かく
+🏔️|やま に のぼった こと が あります が、 ふじさん は まだ です。|やま に のぼった こと が ある が、 ふじさん は まだ だ。|পাহাড়ে উঠেছি, কিন্তু ফুজি এখনো না।|た こと が ある = অভিজ্ঞতা|あります→ある, です→だ
+🍫|おかし を たくさん たべた から、 おなか が いっぱい です。|おかし を たくさん たべた から、 おなか が いっぱい だ。|অনেক মিষ্টি খেয়েছি, তাই পেট ভরা।|から (অতীত)|です→だ
+🛍️|デパート で シャツ を かって、 でんしゃ で かえります。|デパート で シャツ を かって、 でんしゃ で かえる。|ডিপার্টমেন্ট স্টোরে শার্ট কিনে ট্রেনে ফিরি।|て-form = ক্রমানুসারে|かえります→かえる
+🌊|うみ は きれい です が、 みず は つめたい です。|うみ は きれい だ が、 みず は つめたい。|সমুদ্র সুন্দর, কিন্তু পানি ঠান্ডা।|が = কিন্তু|です→だ (い-adj এ বাদ)
+🧳|りょこう に いく まえ に、 ホテル を よやく します。|りょこう に いく まえ に、 ホテル を よやく する。|ভ্রমণে যাওয়ার আগে হোটেল বুক করি।|まえに = আগে|します→する
+🌱|まいにち すこし ずつ べんきょう して いる から、 だんだん じょうず に なります。|まいにち すこし ずつ べんきょう して いる から、 だんだん じょうず に なる。|প্রতিদিন একটু একটু পড়ছি, তাই ধীরে ধীরে দক্ষ হচ্ছি।|から + に なる = হয়ে ওঠা|なります→なる
+🍳|たまご を やいて、 パン に のせます。|たまご を やいて、 パン に のせる。|ডিম ভেজে রুটিতে দেব।|て-form = ক্রমানুসারে|のせます→のせる
+🚲|じてんしゃ で がっこう へ いく こと が できます。|じてんしゃ で がっこう へ いく こと が できる。|সাইকেলে স্কুলে যেতে পারি।|こと が できる = পারা|できます→できる
+🌆|ゆうがた、 そと が くらく なる から、 かえります。|ゆうがた、 そと が くらく なる から、 かえる。|সন্ধ্যায় অন্ধকার হয়, তাই ফিরি।|く + なる = হয়ে ওঠা|かえります→かえる
+🥗|やさい を たべた ほう が いい です から、 サラダ を つくります。|やさい を たべた ほう が いい から、 サラダ を つくる。|সবজি খাওয়া ভালো, তাই সালাদ বানাই।|た ほう が いい = উচিত|です বাদ, つくります→つくる
+🚏|バス を まって いる とき、 ほん を よみます。|バス を まって いる とき、 ほん を よむ。|বাসের অপেক্ষায় বই পড়ি।|とき = যখন|よみます→よむ
+🔑|かぎ を なくした から、 ともだち に でんわ を します。|かぎ を なくした から、 ともだち に でんわ を する。|চাবি হারিয়েছি, তাই বন্ধুকে ফোন করব।|から (অতীত)|します→する
+🧥|さむい から、 コート を きて、 でかけます。|さむい から、 コート を きて、 でかける。|ঠান্ডা, তাই কোট পরে বের হই।|から + て-form|でかけます→でかける
+🍱|おべんとう を つくって、 かいしゃ へ もって いきます。|おべんとう を つくって、 かいしゃ へ もって いく。|টিফিন বানিয়ে অফিসে নিয়ে যাই।|て-form = ক্রমানুসারে|いきます→いく
+🎼|おんがく を きく の が すき です が、 うたう の は にがて です。|おんがく を きく の が すき だ が、 うたう の は にがて だ。|গান শোনা পছন্দ, কিন্তু গাওয়া দুর্বল।|の = বিশেষ্য বানায়|です→だ
+🌂|かさ が ない から、 あめ が やむ まで まちます。|かさ が ない から、 あめ が やむ まで まつ。|ছাতা নেই, তাই বৃষ্টি থামা পর্যন্ত অপেক্ষা করব।|から + まで|まちます→まつ
+📷|ここ で しゃしん を とって は いけません から、 あっち で とります。|ここ で しゃしん を とって は いけない から、 あっち で とる。|এখানে ছবি তোলা নিষেধ, তাই ওখানে তুলব।|ては いけない + から|いけません→いけない
+🚰|のど が かわいた から、 つめたい みず を のみます。|のど が かわいた から、 つめたい みず を のむ。|গলা শুকিয়েছে, তাই ঠান্ডা পানি খাই।|から (অতীত)|のみます→のむ
+🕖|しちじ に おきて、 しちじ はん に うち を でます。|しちじ に おきて、 しちじ はん に うち を でる。|সাতটায় উঠে সাড়ে সাতটায় বের হই।|て-form = ক্রমানুসারে|でます→でる
+🏪|コンビニ は ちかい です が、 スーパー の ほう が やすい です。|コンビニ は ちかい が、 スーパー の ほう が やすい。|কনভিনিয়েন্স স্টোর কাছে, কিন্তু সুপারশপ সস্তা।|が + ほう が|です বাদ
+🎈|たんじょうび に ともだち が プレゼント を くれて、 うれしかった です。|たんじょうび に ともだち が プレゼント を くれて、 うれしかった。|জন্মদিনে বন্ধু উপহার দিল, খুশি হলাম।|て-form = কারণ|です বাদ
+🎣|つり を しながら、 おべんとう を たべます。|つり を しながら、 おべんとう を たべる。|মাছ ধরতে ধরতে টিফিন খাই।|ながら = একই সময়ে|たべます→たべる
+🏨|ホテル に つく まえ に、 コンビニ で みず を かいます。|ホテル に つく まえ に、 コンビニ で みず を かう。|হোটেলে পৌঁছানোর আগে পানি কিনি।|まえに = আগে|かいます→かう
+💬|にほんじん の ともだち が いる から、 まいにち にほんご を はなします。|にほんじん の ともだち が いる から、 まいにち にほんご を はなす。|জাপানি বন্ধু আছে, তাই রোজ জাপানি বলি।|から = কারণ|はなします→はなす
+🍊|みかん は あまい です が、 レモン は すっぱい です。|みかん は あまい が、 レモン は すっぱい。|কমলা মিষ্টি, কিন্তু লেবু টক।|が = কিন্তু|です বাদ
+🏠|うち に かえって から、 すぐ おふろ に はいります。|うち に かえって から、 すぐ おふろ に はいる。|বাড়ি ফিরে তখনই গোসল করি।|てから = পরে|はいります→はいる
+🌠|ほし が きれい です から、 ずっと そら を みて います。|ほし が きれい だ から、 ずっと そら を みて いる。|তারা সুন্দর, তাই আকাশ দেখেই যাচ্ছি।|から + な-adj|です→だ, います→いる
+🧸|いもうと は ぬいぐるみ が すき です が、 おとうと は ゲーム が すき です。|いもうと は ぬいぐるみ が すき だ が、 おとうと は ゲーム が すき だ。|বোন পুতুল, ভাই গেম পছন্দ করে।|が = কিন্তু|です→だ
+🧼|て を あらって から、 ごはん を たべます。|て を あらって から、 ごはん を たべる。|হাত ধুয়ে তারপর খাই।|てから = পরে|たべます→たべる
+📻|ラジオ を ききながら、 りょうり を つくります。|ラジオ を ききながら、 りょうり を つくる。|রেডিও শুনতে শুনতে রান্না করি।|ながら = একই সময়ে|つくります→つくる
+🚪|へや に はいる まえ に、 くつ を ぬぎます。|へや に はいる まえ に、 くつ を ぬぐ。|ঘরে ঢোকার আগে জুতো খুলি।|まえに = আগে|ぬぎます→ぬぐ
+🧑‍🤝‍🧑|ともだち と べんきょう する とき、 たのしい です。|ともだち と べんきょう する とき、 たのしい。|বন্ধুর সাথে পড়লে মজা লাগে।|とき = যখন|です বাদ
+⛩️|にほん へ いった こと が ありません が、 いつか いきたい です。|にほん へ いった こと が ない が、 いつか いきたい。|জাপানে যাইনি, কিন্তু একদিন যেতে চাই।|た こと が ない + たい|ありません→ない, です বাদ
+🥢|はし を つかって、 ごはん を たべます。|はし を つかって、 ごはん を たべる。|চপস্টিক দিয়ে ভাত খাই।|て-form = উপায়|たべます→たべる
+❄️|ふゆ は さむい です から、 あたたかい ふく を きます。|ふゆ は さむい から、 あたたかい ふく を きる。|শীতে ঠান্ডা, তাই গরম কাপড় পরি।|から = কারণ|です বাদ, きます→きる
+🚕|じかん が ない から、 タクシー で いきます。|じかん が ない から、 タクシー で いく。|সময় নেই, তাই ট্যাক্সিতে যাই।|から = কারণ|いきます→いく
+🎨|え を かく の が すき です から、 まいしゅう かきます。|え を かく の が すき だ から、 まいしゅう かく。|ছবি আঁকা ভালো লাগে, তাই প্রতি সপ্তাহে আঁকি।|の + から|です→だ, かきます→かく
+📬|てがみ を もらって、 すぐ へんじ を かきました。|てがみ を もらって、 すぐ へんじ を かいた。|চিঠি পেয়ে তখনই উত্তর লিখলাম।|て-form + অতীত|かきました→かいた
+🎾|どようび は テニス を したり、 えいが を みたり します。|どようび は テニス を したり、 えいが を みたり する。|শনিবার কখনো টেনিস, কখনো সিনেমা।|たり〜たり|します→する
+🍇|くだもの は すき です が、 たかい から あまり かいません。|くだもの は すき だ が、 たかい から あまり かわない。|ফল পছন্দ, কিন্তু দামি তাই কম কিনি।|が + から|です→だ, かいません→かわない
+😴|つかれた から、 きょう は はやく ねます。|つかれた から、 きょう は はやく ねる。|ক্লান্ত, তাই আজ তাড়াতাড়ি ঘুমাব।|から (অতীত)|ねます→ねる
+🕊️|こうえん で ともだち を まって いる とき、 とり を みました。|こうえん で ともだち を まって いる とき、 とり を みた。|পার্কে বন্ধুর অপেক্ষায় পাখি দেখলাম।|とき + অতীত|みました→みた
+🧃|のみもの は ジュース に します が、 たべもの は パン に します。|のみもの は ジュース に する が、 たべもの は パン に する。|পানীয় জুস, খাবার রুটি নেব।|に する = বেছে নেওয়া|します→する
+🏋️|ジム へ いって、 すこし うんどう して から、 かえります。|ジム へ いって、 すこし うんどう して から、 かえる。|জিমে গিয়ে একটু ব্যায়াম করে ফিরি।|て-form + てから|かえります→かえる
+🎄|クリスマス に ケーキ を たべる つもり です が、 ことし は いそがしい です。|クリスマス に ケーキ を たべる つもり だ が、 ことし は いそがしい。|ক্রিসমাসে কেক খাওয়ার ইচ্ছা, কিন্তু এ বছর ব্যস্ত।|つもり + が|です→だ / বাদ
+🎓|にほんご が じょうず に なる まで、 まいにち がんばります。|にほんご が じょうず に なる まで、 まいにち がんばる。|জাপানি দক্ষ না হওয়া পর্যন্ত রোজ চেষ্টা করব।|まで = পর্যন্ত|がんばります→がんばる`;
+
+/* শব্দের অর্থ (chip): কার্ডের ক্রম অনুযায়ী, শব্দ=অর্থ */
+const W=`あめ=বৃষ্টি;ふる=পড়া;うち=বাড়ি;いる=থাকা
+おなか=পেট;すく=খালি হওয়া;ラーメン=রামেন;たべる=খাওয়া
+コーヒー=কফি;すき=পছন্দ;ミルク=দুধ;じゃ ない=নয়
+えき=স্টেশন;つく=পৌঁছানো;まえ=আগে;でんわ=ফোন;する=করা
+ごはん=ভাত;たべる=খাওয়া;シャワー=শাওয়ার;あびる=নেওয়া
+たべる=খাওয়া;テレビ=টিভি;みる=দেখা
+ひま=অবসর;とき=সময়;えいが=সিনেমা;みる=দেখা
+うみ=সমুদ্র;いく=যাওয়া;およぐ=সাঁতার কাটা
+ともだち=বন্ধু;くる=আসা;ほん=বই;よむ=পড়া
+しゅくだい=হোমওয়ার্ক;ゲーム=গেম;する=করা
+ねつ=জ্বর;ある=আছে;がっこう=স্কুল;やすむ=ছুটি নেওয়া
+バス=বাস;くる=আসা;あるく=হাঁটা
+スーパー=সুপারশপ;たまご=ডিম;ぎゅうにゅう=দুধ;かう=কেনা
+おんがく=গান;きく=শোনা;さんぽ=হাঁটাহাঁটি
+さくら=চেরি ফুল;さく=ফোটা;こうえん=পার্ক
+あつい=গরম;みず=পানি;のむ=পান করা
+あさ=সকাল;ろくじ=ছয়টা;おきる=ঘুম থেকে ওঠা
+プレゼント=উপহার;あげる=দেওয়া;ケーキ=কেক
+いぬ=কুকুর;かわいい=কিউট;ねこ=বিড়াল;ほう=দিক, বেশি
+じゅぎょう=ক্লাস;おわる=শেষ হওয়া;ここ=এখানে;まつ=অপেক্ষা করা
+りょうり=রান্না;しお=লবণ;つかう=ব্যবহার করা
+よる=রাত;しずか=শান্ত;すぐ=তাড়াতাড়ি;ねる=ঘুমানো
+あたらしい=নতুন;くつ=জুতো;かう=কেনা;きょう=আজ;はく=পরা
+あした=কাল;あめ=বৃষ্টি;かさ=ছাতা;もつ=নেওয়া
+てがみ=চিঠি;かく=লেখা;ゆうびんきょく=ডাকঘর
+ねる=ঘুমানো;おふろ=গোসল;はいる=ঢোকা
+まいあさ=প্রতি সকালে;はしる=দৌড়ানো;がっこう=স্কুল
+にほんご=জাপানি ভাষা;べんきょう=পড়াশোনা;まだ=এখনো;じょうず=দক্ষ
+りんご=আপেল;あかい=লাল;バナナ=কলা;きいろい=হলুদ
+おちゃ=চা;のむ=পান করা;べんきょう=পড়াশোনা;はじめる=শুরু করা
+としょかん=লাইব্রেরি;かりる=ধার নেওয়া;うち=বাড়ি;よむ=পড়া
+うた=গান;うたう=গাওয়া;ダンス=নাচ;する=করা
+プール=সুইমিং পুল;およぐ=সাঁতার কাটা;こと=অভিজ্ঞতা;ある=আছে
+なつやすみ=গ্রীষ্মের ছুটি;にほん=জাপান;いく=যাওয়া;つもり=পরিকল্পনা
+ひこうき=বিমান;はやい=দ্রুত;ほう=দিক, বেশি;いく=যাওয়া
+ねる=ঘুমানো;ぎゅうにゅう=দুধ;のむ=পান করা;いけない=চলবে না
+あたま=মাথা;いたい=ব্যথা;くすり=ওষুধ;ゆっくり=ধীরে;やすむ=বিশ্রাম নেওয়া
+へや=ঘর;きたない=নোংরা;そうじ=পরিষ্কার করা
+テスト=পরীক্ষা;まいにち=প্রতিদিন;べんきょう=পড়াশোনা
+ケーキ=কেক;つくる=বানানো;さとう=চিনি;つかう=ব্যবহার করা
+くるま=গাড়ি;ない=নেই;でんしゃ=ট্রেন;かいしゃ=অফিস
+じゅうじ=দশটা;なる=হওয়া;テレビ=টিভি;みる=দেখা
+さかな=মাছ;にく=মাংস;あまり=তেমন (না);すき=পছন্দ
+かぞく=পরিবার;いっしょ=একসাথে;さんぽ=হাঁটাহাঁটি
+パソコン=কম্পিউটার;つかう=ব্যবহার করা;にほんご=জাপানি ভাষা
+てんき=আবহাওয়া;いい=ভালো;そと=বাইরে;あそぶ=খেলা
+あさごはん=সকালের খাবার;たべる=খাওয়া;がっこう=স্কুল
+ピアノ=পিয়ানো;ひく=বাজানো;じょうず=দক্ষ
+よる=রাত;おそく=দেরিতে;おきる=জেগে থাকা;けさ=আজ সকাল;ねむい=ঘুম পাওয়া
+おとうさん=বাবা;でんわ=ফোন;かける=করা (ফোন);あう=দেখা করা
+パン=রুটি;かう=কেনা;さいふ=মানিব্যাগ;みる=দেখা
+あつい=গরম;まど=জানালা;あける=খোলা
+かばん=ব্যাগ;なか=ভেতর;ノート=খাতা;ペン=কলম
+せんせい=শিক্ষক;はなす=কথা বলা;しずか=শান্ত;かく=লেখা
+やま=পাহাড়;のぼる=ওঠা;ふじさん=ফুজি পর্বত;まだ=এখনো
+おかし=মিষ্টি, স্ন্যাকস;たくさん=অনেক;おなか=পেট;いっぱい=ভরা
+デパート=ডিপার্টমেন্ট স্টোর;シャツ=শার্ট;かえる=ফেরা
+うみ=সমুদ্র;きれい=সুন্দর;みず=পানি;つめたい=ঠান্ডা
+りょこう=ভ্রমণ;いく=যাওয়া;ホテル=হোটেল;よやく=বুকিং
+すこし=একটু;ずつ=করে করে;だんだん=ধীরে ধীরে;じょうず=দক্ষ;なる=হওয়া
+たまご=ডিম;やく=ভাজা;のせる=ওপরে রাখা
+じてんしゃ=সাইকেল;がっこう=স্কুল;できる=পারা
+ゆうがた=সন্ধ্যা;くらい=অন্ধকার;かえる=ফেরা
+やさい=সবজি;サラダ=সালাদ;つくる=বানানো
+バス=বাস;まつ=অপেক্ষা করা;ほん=বই
+かぎ=চাবি;なくす=হারানো;でんわ=ফোন
+さむい=ঠান্ডা;コート=কোট;きる=পরা;でかける=বের হওয়া
+おべんとう=টিফিন;かいしゃ=অফিস;もつ=নেওয়া
+おんがく=গান;うたう=গাওয়া;にがて=দুর্বল
+かさ=ছাতা;やむ=থামা;まつ=অপেক্ষা করা
+しゃしん=ছবি;とる=তোলা;あっち=ওখানে
+のど=গলা;かわく=শুকানো;つめたい=ঠান্ডা
+しちじ=সাতটা;はん=আধা;でる=বের হওয়া
+コンビニ=কনভিনিয়েন্স স্টোর;ちかい=কাছে;やすい=সস্তা
+たんじょうび=জন্মদিন;くれる=দেওয়া;うれしい=খুশি
+つり=মাছ ধরা;おべんとう=টিফিন;たべる=খাওয়া
+ホテル=হোটেল;つく=পৌঁছানো;みず=পানি
+にほんじん=জাপানি মানুষ;にほんご=জাপানি ভাষা;はなす=বলা
+みかん=কমলা;あまい=মিষ্টি;すっぱい=টক
+かえる=ফেরা;すぐ=তখনই;おふろ=গোসল
+ほし=তারা;きれい=সুন্দর;そら=আকাশ
+いもうと=ছোট বোন;おとうと=ছোট ভাই;ぬいぐるみ=পুতুল
+て=হাত;あらう=ধোয়া;ごはん=ভাত
+ラジオ=রেডিও;きく=শোনা;りょうり=রান্না
+へや=ঘর;くつ=জুতো;ぬぐ=খোলা
+ともだち=বন্ধু;たのしい=মজার;べんきょう=পড়াশোনা
+にほん=জাপান;いつか=কোনোদিন;いきたい=যেতে চাই
+はし=চপস্টিক;つかう=ব্যবহার করা;ごはん=ভাত
+ふゆ=শীত;あたたかい=গরম;ふく=কাপড়
+じかん=সময়;タクシー=ট্যাক্সি;いく=যাওয়া
+え=ছবি;かく=আঁকা;まいしゅう=প্রতি সপ্তাহে
+てがみ=চিঠি;もらう=পাওয়া;へんじ=উত্তর
+どようび=শনিবার;テニス=টেনিス;えいが=সিনেমা
+くだもの=ফল;たかい=দামি;あまり=তেমন (না)
+つかれる=ক্লান্ত হওয়া;きょう=আজ;はやく=তাড়াতাড়ি
+こうえん=পার্ক;とり=পাখি;みる=দেখা
+のみもの=পানীয়;ジュース=জুস;たべもの=খাবার
+ジム=জিম;うんどう=ব্যায়াম;すこし=একটু
+クリスマス=ক্রিসমাস;つもり=ইচ্ছা;ことし=এ বছর;いそがしい=ব্যস্ত
+じょうず=দক্ষ;まいにち=রোজ;がんばる=চেষ্টা করা`;
+
+/* কাঞ্জি → ফুরিগানা: টোকেন অনুযায়ী (কানা টোকেনের সাথে মিলিয়ে)। সংজ্ঞা: কানা টোকেন → 漢字[ふりがな]+বাকি কানা */
+const KJ={
+あめ:'雨[あめ]',ふって:'降[ふ]って',ふる:'降[ふ]る',うち:'家[うち]',
+すいた:'空[す]いた',すく:'空[す]く',たべます:'食[た]べます',たべる:'食[た]べる',たべて:'食[た]べて',たべた:'食[た]べた',たべない:'食[た]べない',たべながら:'食[た]べながら',たべました:'食[た]べました',たべもの:'食[た]べ物[もの]',
+すき:'好[す]き',つく:'着[つ]く',えき:'駅[えき]',まえ:'前[まえ]',でんわ:'電話[でんわ]',ごはん:'ご飯[ごはん]',
+あびます:'浴[あ]びます',あびる:'浴[あ]びる',みます:'見[み]ます',みる:'見[み]る',みて:'見[み]て',みた:'見[み]た',みました:'見[み]ました',みたり:'見[み]たり',
+とき:'時[とき]',ひま:'暇[ひま]',えいが:'映画[えいが]',うみ:'海[うみ]',
+いって:'行[い]って',いく:'行[い]く',いきます:'行[い]きます',いきたい:'行[い]きたい',いった:'行[い]った',いきました:'行[い]きました',
+およぎたい:'泳[およ]ぎたい',およぐ:'泳[およ]ぐ',およいだ:'泳[およ]いだ',
+ともだち:'友達[ともだち]',くる:'来[く]る',きます:'着[き]ます',きました:'来[き]ました',きた:'来[き]た',こなかった:'来[こ]なかった',きて:'着[き]て',きる:'着[き]る',
+ほん:'本[ほん]',よんで:'読[よ]んで',よむ:'読[よ]む',よみます:'読[よ]みます',
+しゅくだい:'宿題[しゅくだい]',ねつ:'熱[ねつ]',がっこう:'学校[がっこう]',やすみます:'休[やす]みます',やすむ:'休[やす]む',
+あるいて:'歩[ある]いて',あるく:'歩[ある]く',たまご:'卵[たまご]',ぎゅうにゅう:'牛乳[ぎゅうにゅう]',
+かいます:'買[か]います',かう:'買[か]う',かって:'買[か]って',かいません:'買[か]いません',かわない:'買[か]わない',
+おんがく:'音楽[おんがく]',ききながら:'聞[き]きながら',きく:'聞[き]く',さんぽ:'散歩[さんぽ]',
+さくら:'桜[さくら]',さいて:'咲[さ]いて',さく:'咲[さ]く',こうえん:'公園[こうえん]',
+あつい:'暑[あつ]い',みず:'水[みず]',のみたい:'飲[の]みたい',のむ:'飲[の]む',のみます:'飲[の]みます',のんで:'飲[の]んで',のみもの:'飲[の]み物[もの]',
+あさ:'朝[あさ]',ろくじ:'六時[ろくじ]',おきて:'起[お]きて',おきる:'起[お]きる',でます:'出[で]ます',でる:'出[で]る',
+いぬ:'犬[いぬ]',ねこ:'猫[ねこ]',ほう:'方[ほう]',
+じゅぎょう:'授業[じゅぎょう]',おわる:'終[お]わる',まって:'待[ま]って',まちます:'待[ま]ちます',まつ:'待[ま]つ',
+りょうり:'料理[りょうり]',しお:'塩[しお]',つかいます:'使[つか]います',つかう:'使[つか]う',つかって:'使[つか]って',
+よる:'夜[よる]',しずか:'静[しず]か',ねます:'寝[ね]ます',ねる:'寝[ね]る',
+あたらしい:'新[あたら]しい',くつ:'靴[くつ]',きょう:'今日[きょう]',はいて:'履[は]いて',はく:'履[は]く',
+あした:'明日[あした]',かさ:'傘[かさ]',もって:'持[も]って',もつ:'持[も]つ',
+てがみ:'手紙[てがみ]',かいて:'書[か]いて',かく:'書[か]く',かきます:'書[か]きます',かきました:'書[か]きました',かいた:'書[か]いた',
+ゆうびんきょく:'郵便局[ゆうびんきょく]',おふろ:'お風呂[おふろ]',はいります:'入[はい]ります',はいる:'入[はい]る',
+まいあさ:'毎朝[まいあさ]',はしって:'走[はし]って',はしる:'走[はし]る',
+にほんご:'日本語[にほんご]',べんきょう:'勉強[べんきょう]',じょうず:'上手[じょうず]',
+はなします:'話[はな]します',はなす:'話[はな]す',はなして:'話[はな]して',
+りんご:'林檎[りんご]',あかい:'赤[あか]い',きいろい:'黄色[きいろ]い',
+おちゃ:'お茶[おちゃ]',はじめます:'始[はじ]めます',はじめる:'始[はじ]める',
+としょかん:'図書館[としょかん]',かりて:'借[か]りて',かりる:'借[か]りる',
+うた:'歌[うた]',うたったり:'歌[うた]ったり',うたう:'歌[うた]う',
+こと:'事[こと]',なつやすみ:'夏休み[なつやすみ]',にほん:'日本[にほん]',ひこうき:'飛行機[ひこうき]',はやい:'速[はや]い',
+あたま:'頭[あたま]',いたい:'痛[いた]い',くすり:'薬[くすり]',
+へや:'部屋[へや]',きたない:'汚[きたな]い',そうじ:'掃除[そうじ]',まいにち:'毎日[まいにち]',
+つくる:'作[つく]る',つくります:'作[つく]ります',さとう:'砂糖[さとう]',
+くるま:'車[くるま]',でんしゃ:'電車[でんしゃ]',かいしゃ:'会社[かいしゃ]',
+じゅうじ:'十時[じゅうじ]',なる:'成[な]る',
+さかな:'魚[さかな]',にく:'肉[にく]',かぞく:'家族[かぞく]',いっしょ:'一緒[いっしょ]',
+てんき:'天気[てんき]',そと:'外[そと]',あそびたい:'遊[あそ]びたい',あそぶ:'遊[あそ]ぶ',
+あさごはん:'朝ご飯[あさごはん]',ひく:'弾[ひ]く',
+おそく:'遅[おそ]く',けさ:'今朝[けさ]',ねむい:'眠[ねむ]い',
+かける:'掛[か]ける',かけて:'掛[か]けて',あう:'会[あ]う',あいます:'会[あ]います',
+さいふ:'財布[さいふ]',まど:'窓[まど]',あける:'開[あ]ける',あけて:'開[あ]けて',
+かばん:'鞄[かばん]',なか:'中[なか]',
+せんせい:'先生[せんせい]',やま:'山[やま]',のぼった:'登[のぼ]った',のぼる:'登[のぼ]る',ふじさん:'富士山[ふじさん]',
+おかし:'お菓子[おかし]',かえります:'帰[かえ]ります',かえる:'帰[かえ]る',かえって:'帰[かえ]って',
+つめたい:'冷[つめ]たい',りょこう:'旅行[りょこう]',よやく:'予約[よやく]',すこし:'少[すこ]し',
+やいて:'焼[や]いて',やく:'焼[や]く',のせます:'載[の]せます',のせる:'載[の]せる',
+じてんしゃ:'自転車[じてんしゃ]',ゆうがた:'夕方[ゆうがた]',くらく:'暗[くら]く',くらい:'暗[くら]い',
+やさい:'野菜[やさい]',かぎ:'鍵[かぎ]',なくした:'無[な]くした',なくす:'無[な]くす',
+さむい:'寒[さむ]い',でかけます:'出[で]かけます',でかける:'出[で]かける',
+おべんとう:'お弁当[おべんとう]',にがて:'苦手[にがて]',やむ:'止[や]む',
+しゃしん:'写真[しゃしん]',とって:'撮[と]って',とる:'撮[と]る',とります:'撮[と]ります',
+のど:'喉[のど]',かわいた:'乾[かわ]いた',かわく:'乾[かわ]く',
+しちじ:'七時[しちじ]',はん:'半[はん]',ちかい:'近[ちか]い',やすい:'安[やす]い',
+たんじょうび:'誕生日[たんじょうび]',うれしかった:'嬉[うれ]しかった',うれしい:'嬉[うれ]しい',もらって:'貰[もら]って',もらう:'貰[もら]う',
+つり:'釣[つ]り',にほんじん:'日本人[にほんじん]',みかん:'蜜柑[みかん]',あまい:'甘[あま]い',すっぱい:'酸[す]っぱい',
+ほし:'星[ほし]',そら:'空[そら]',いもうと:'妹[いもうと]',おとうと:'弟[おとうと]',
+あらって:'洗[あら]って',あらう:'洗[あら]う',ぬぎます:'脱[ぬ]ぎます',ぬぐ:'脱[ぬ]ぐ',
+たのしい:'楽[たの]しい',はし:'箸[はし]',
+ふゆ:'冬[ふゆ]',あたたかい:'暖[あたた]かい',ふく:'服[ふく]',じかん:'時間[じかん]',
+え:'絵[え]',まいしゅう:'毎週[まいしゅう]',へんじ:'返事[へんじ]',どようび:'土曜日[どようび]',
+くだもの:'果物[くだもの]',たかい:'高[たか]い',
+つかれた:'疲[つか]れた',つかれる:'疲[つか]れる',はやく:'早[はや]く',
+とり:'鳥[とり]',うんどう:'運動[うんどう]',ことし:'今年[ことし]',いそがしい:'忙[いそが]しい',
+がんばる:'頑張[がんば]る',がんばります:'頑張[がんば]ります'
+};
+const rb=s=>s.replace(/([^\[\]]+)\[([^\]]+)\]/g,'<ruby>$1<rt>$2</rt></ruby>');
+const kj=t=>{const m=t.match(/^(.*?)([、。]*)$/);return (KJ[m[1]]?rb(KJ[m[1]]):m[1])+m[2]};
+const wr=(s,k)=>s.split(' ').map(w=>`<span class="w">${k?kj(w):w}</span>`).join(' ');
+
+/* কানা → রোমাজি + বাংলা উচ্চারণ */
+const ROWS=[['','','あいうえお'],['k','ক','かきくけこ'],['s','স','さしすせそ'],['t','ত','たちつてと'],['n','ন','なにぬねの'],['h','হ','はひふへほ'],['m','ম','まみむめも'],['r','র','らりるれろ'],['g','গ','がぎぐげご'],['z','জ','ざじずぜぞ'],['d','দ','だぢづでど'],['b','ব','ばびぶべぼ'],['p','প','ぱぴぷぺぽ']];
+const V='aiueo',BV='আইউএও',BS=['া','ি','ু','ে','ো'],M={},Y={'ゃ':0,'ゅ':2,'ょ':4};
+ROWS.forEach(([c,b,s])=>[...s].forEach((k,i)=>M[k]=c?[c+V[i],b+BS[i]]:[V[i],BV[i]]));
+Object.assign(M,{し:['shi','শি'],ち:['chi','চি'],つ:['tsu','তসু'],ふ:['fu','ফু'],じ:['ji','জি'],ぢ:['ji','জি'],づ:['zu','জু'],や:['ya','ইয়া'],ゆ:['yu','ইউ'],よ:['yo','ইয়ো'],わ:['wa','ওয়া'],を:['o','ও'],ん:['n','ন']});
+const PART={'は':['wa','ওয়া'],'へ':['e','এ'],'を':['o','ও']},PUN={'。':'.','、':','};
+const hira=c=>{const k=c.charCodeAt(0);return k>=0x30A1&&k<=0x30F6?String.fromCharCode(k-0x60):c};
+function conv(txt){
+  const R=[],B=[];
+  txt.split(' ').forEach(w=>{
+    if(PART[w]){R.push(PART[w][0]);B.push(PART[w][1]);return}
+    let rr='',bb='',prev=null,sm=false;
+    for(let ch of w){
+      ch=hira(ch);
+      if(ch==='っ'){sm=true;continue}
+      if(ch==='ー'){rr+=rr.slice(-1);continue}
+      if(PUN[ch]){rr+=PUN[ch];bb+=PUN[ch];continue}
+      if(ch in Y&&prev){
+        const [r,b]=prev,v=Y[ch],sh=/^(sh|ch|j)/.test(r);
+        rr=rr.slice(0,-r.length);bb=bb.slice(0,-b.length);
+        const nr=r.slice(0,-1)+(sh?'':'y')+V[v],nb=b.slice(0,-1)+(sh?'':'্য')+BS[v];
+        rr+=nr;bb+=nb;prev=[nr,nb];continue}
+      const m=M[ch];
+      if(!m){rr+=ch;bb+=ch;continue}
+      let [r,b]=m;const lv=rr.slice(-1);
+      if(r.length===1&&V.includes(r)&&(r===lv||(r==='u'&&lv==='o')||(r==='i'&&lv==='e'))){rr+=r;continue}
+      if(sm){r=(r[0]==='c'?'t':r[0])+r;b=b[0]+'্'+b;sm=false}
+      rr+=r;bb+=b;prev=[r,b];
+    }
+    R.push(rr);B.push(bb);
+  });
+  return [R.join(' '),B.join(' ')];
+}
+
+/* ---------- ডেটা ও স্টেট ---------- */
+const LS={g(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},s(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let kanji=LS.g('kanji')===true, rate=LS.g('rate')||0.8;
+const FAV=new Set(LS.g('fav')||[]), DONE=new Set(LS.g('done')||[]);
+const fl=document.getElementById('flt');
+const grid=document.getElementById('grid'), EL=[], CARDS=[];
+
+/* ---------- উচ্চারণ ---------- */
+const synth=window.speechSynthesis||null;
+let hlT=[];
+const clearHl=()=>{hlT.forEach(clearTimeout);hlT=[];document.querySelectorAll('.w.hl').forEach(e=>e.classList.remove('hl'))};
+const hl=(f,k)=>{f.querySelectorAll('.w.hl').forEach(e=>e.classList.remove('hl'));const w=k>=0&&f.querySelectorAll('.w')[k];if(w)w.classList.add('hl')};
+const jaVoice=()=>{const ja=synth?synth.getVoices().filter(v=>/^ja/i.test(v.lang)):[];return ja.find(v=>/Kyoko|Haruka|Nanami|Google/i.test(v.name))||ja[0]||null};
+function say(list,btns){
+  if(!synth){alert('এই ব্রাউজারে শব্দ সাপোর্ট নেই। Chrome বা Edge ব্যবহার করুন।');return}
+  synth.cancel();clearHl();
+  document.querySelectorAll('.on,.speaking').forEach(e=>e.classList.remove('on','speaking'));
+  const v=jaVoice();
+  list.forEach((t,i)=>{
+    const u=new SpeechSynthesisUtterance(t.replace(/\s/g,''));
+    const b=btns[i],f=b&&b.closest('.form'),toks=t.split(' ');
+    u.lang='ja-JP';u.rate=rate;if(v)u.voice=v;
+    u.onstart=()=>{
+      clearHl();
+      if(b)b.classList.add('on');
+      if(f){
+        f.classList.add('speaking');
+        let tm=0;
+        toks.forEach((w,k)=>{hlT.push(setTimeout(()=>hl(f,k),tm));tm+=w.length*130/rate+(/[、。]$/.test(w)?250:0)});
+      }
+    };
+    u.onend=()=>{
+      if(b)b.classList.remove('on');
+      if(f)f.classList.remove('speaking');
+      clearHl();
+    };
+    synth.speak(u);
+  });
+}
+const vinfo=()=>{const v=jaVoice();document.getElementById('vinfo').textContent=synth?(v?`ব্যবহৃত ভয়েস: ${v.name}`:'জাপানি ভয়েস পাওয়া যায়নি, ডিভাইসে Japanese voice install করুন'):''};
+if(synth){synth.getVoices();synth.onvoiceschanged=vinfo}
+
+/* ---------- কুইজ (প্রতিটি কার্ডের পেছনে) ---------- */
+const HINT=['এই অর্থের সঠিক বাক্যটি বেছে নিন','এই Plain বাক্যের Polite রূপটি বেছে নিন','রোমাজিতে Polite বাক্যটি লিখে Enter চাপুন বা যাচাই করুন'];
+const norm=s=>s.toLowerCase().replace(/[^a-z]/g,'');
+function quiz(card,C){
+  const $=s=>card.querySelector(s),qe=$('.qe'),qm=$('.qm'),qa=$('.qa'),qi=$('.qi'),qr=$('.qr'),chk=$('.chk'),btns=card.querySelectorAll('.qt button');
+  let mode=0;
+  function q(){
+    qa.innerHTML='';
+    qa.hidden=mode===2;qi.hidden=mode!==2;chk.hidden=mode!==2;
+    qi.value='';qi.disabled=false;
+    qe.textContent=mode===1?'':C.em;
+    qm.innerHTML=mode===1?wr(C.pla,kanji):C.mean;
+    if(mode!==2){
+      const pool=CARDS.filter(x=>x!==C).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.pol);
+      [C.pol,...pool].sort(()=>Math.random()-.5).forEach(o=>{const b=document.createElement('button');b.dataset.v=o;b.innerHTML=wr(o,kanji);qa.appendChild(b)});
+    }
+    qr.className='qr';qr.innerHTML=HINT[mode];
+  }
+  const reveal=(ok,extra)=>{qr.innerHTML=(ok?'<span class="ok">✔ সঠিক!</span>':'<span class="no">✘ ভুল</span>')+extra};
+  qa.onclick=e=>{
+    const b=e.target.closest('button');if(!b||b.disabled)return;
+    const ok=b.dataset.v===C.pol;
+    qa.querySelectorAll('button').forEach(x=>{x.disabled=true;if(x.dataset.v===C.pol)x.classList.add('ans')});
+    if(!ok)b.classList.add('bad');
+    reveal(ok,`<br><small>মানে: ${C.mean}</small>`);
+  };
+  const check=()=>{
+    if(qi.disabled||!qi.value.trim())return;
+    qi.disabled=true;
+    reveal(norm(qi.value)===norm(C.pr),`<br>${wr(C.pol,kanji)}<br><small>${C.pr}</small>`);
+  };
+  chk.onclick=check;
+  qi.onkeydown=e=>{if(e.key==='Enter')check()};
+  btns.forEach(b=>b.onclick=()=>{mode=+b.dataset.m;btns.forEach(x=>x.setAttribute('aria-pressed',x===b));q()});
+  $('.nx').onclick=q;
+  q();
+  return q;
+}
+
+/* ---------- কার্ড তৈরি ---------- */
+const LINES=D.split('\n'),WL=W.split('\n');
+LINES.forEach((line,i)=>{
+  const [em,pol,pla,mean,pat,chg]=line.split('|');
+  const [pr,pb]=conv(pol),[lr,lb]=conv(pla);
+  const C={i,em,pol,pla,mean,pr,lr,pb,lb};
+  CARDS.push(C);
+  const words=(WL[i]||'').split(';').filter(Boolean).map(p=>p.split('=')).map(([a,b])=>`<button class="chip" data-w="${a}"><span lang="ja">${a}</span><small>${b}</small></button>`).join('');
+  const c=document.createElement('article');
+  c.className='card';
+  c.innerHTML=`<div class="mk"><button class="st" aria-label="ফেভারিট" aria-pressed="false">☆</button><button class="dn" aria-label="শেখা হয়েছে" aria-pressed="false">○</button></div>
+<div class="front">
+<div class="pic" aria-hidden="true"><b>${i+1}</b>${em}</div>
+<div class="meta"><span class="tag">${pat}</span><p class="mean">${mean}</p></div>
+<div class="wd" title="শব্দ চাপলে উচ্চারণ শুনবেন">${words}</div>
+<div class="form pol"><div class="lab">ভদ্র রূপ (Polite)</div><div class="jp" lang="ja"></div><div class="ro">${pr}</div><div class="bn">${pb}</div><div class="gr">ব্যাকরণ: ます／です দিয়ে শেষ হয়</div><button class="sp" aria-label="Polite শুনুন">🔊</button></div>
+<div class="form pla"><div class="lab">সাধারণ রূপ (Plain)</div><div class="jp" lang="ja"></div><div class="ro">${lr}</div><div class="bn">${lb}</div><div class="gr">ব্যাকরণ: ${chg}</div><button class="sp" aria-label="Plain শুনুন">🔊</button></div>
+<button class="both">🔊 দুটোই শুনুন (Polite → Plain)</button>
+<button class="fl">🔄 কুইজ ও প্র্যাকটিস</button>
+</div>
+<div class="back" hidden>
+<div class="qt" role="group" aria-label="কুইজের ধরন"><button data-m="0" aria-pressed="true">অর্থ → বাক্য</button><button data-m="1" aria-pressed="false">Plain → Polite</button><button data-m="2" aria-pressed="false">টাইপ করুন</button></div>
+<div class="qp"><div class="qe"></div><div class="qm"></div></div>
+<div class="qa"></div>
+<input class="qi" hidden placeholder="রোমাজিতে লিখুন, যেমন: ..." autocomplete="off">
+<div class="qs"><button class="chk" hidden>যাচাই</button><button class="nx">🔀 নতুন প্রশ্ন</button></div>
+<div class="qr" aria-live="polite"></div>
+<button class="bk">← কার্ডে ফিরুন</button>
+</div>`;
+  grid.appendChild(c);EL.push(c);
+  const [b1,b2]=c.querySelectorAll('.sp'),front=c.querySelector('.front'),back=c.querySelector('.back');
+  c.querySelectorAll('.chip').forEach(x=>x.onclick=()=>say([x.dataset.w],[x]));
+  b1.onclick=()=>say([pol],[b1]);
+  b2.onclick=()=>say([pla],[b2]);
+  c.querySelector('.both').onclick=()=>say([pol,pla],[b1,b2]);
+  const q=quiz(c,C);
+  c._q=q;
+  c.querySelector('.fl').onclick=()=>{
+    front.hidden=true;back.hidden=false;
+    back.classList.remove('fp');void back.offsetWidth;back.classList.add('fp');
+    q();
+  };
+  c.querySelector('.bk').onclick=()=>{back.hidden=true;front.hidden=false};
+  c.querySelector('.st').onclick=()=>tog(FAV,i);
+  c.querySelector('.dn').onclick=()=>tog(DONE,i);
+});
+
+/* ---------- ফেভারিট, শেখা, ফিল্টার ---------- */
+function tog(set,i){set.has(i)?set.delete(i):set.add(i);sync()}
+function sync(){
+  EL.forEach((el,i)=>{
+    const s=el.querySelector('.st'),d=el.querySelector('.dn'),f=FAV.has(i),dn=DONE.has(i);
+    s.textContent=f?'★':'☆';s.setAttribute('aria-pressed',f);
+    d.textContent=dn?'✓':'○';d.setAttribute('aria-pressed',dn);
+    el.classList.toggle('fin',dn);
+  });
+  LS.s('fav',[...FAV]);LS.s('done',[...DONE]);
+  applyFilter();
+}
+function applyFilter(){
+  const f=fl.value;let n=0;
+  EL.forEach((el,i)=>{
+    const show=f==='all'||(f==='star'&&FAV.has(i))||(f==='todo'&&!DONE.has(i))||(f==='done'&&DONE.has(i));
+    el.hidden=!show;if(show)n++;
+  });
+  document.getElementById('cnt').textContent=`মোট ${EL.length}টি · দেখাচ্ছে ${n}টি · ⭐ ${FAV.size} · ✅ ${DONE.size}`;
+}
+fl.onchange=applyFilter;
+
+/* ---------- কাঞ্জি/ফুরিগানা টগল ---------- */
+function paint(){
+  document.body.classList.toggle('k1',kanji);
+  CARDS.forEach((C,i)=>{
+    const el=EL[i];
+    el.querySelector('.pol .jp').innerHTML=wr(C.pol,kanji);
+    el.querySelector('.pla .jp').innerHTML=wr(C.pla,kanji);
+    el.querySelectorAll('.chip').forEach(ch=>{const w=ch.dataset.w;ch.firstElementChild.innerHTML=kanji&&KJ[w]?rb(KJ[w]):w});
+    if(!el.querySelector('.back').hidden)el._q();
+  });
+}
+const kbtns=document.querySelectorAll('.seg button');
+function setKanji(on){
+  kanji=on;
+  kbtns.forEach(b=>b.setAttribute('aria-pressed',(b.dataset.k==='1')===on));
+  LS.s('kanji',on);
+  paint();
+}
+kbtns.forEach(b=>b.onclick=()=>setKanji(b.dataset.k==='1'));
+
+/* ---------- গতি ---------- */
+const rs=document.getElementById('rate');
+rs.value=String(rate);
+rs.onchange=()=>{rate=+rs.value;LS.s('rate',rate)};
+
+/* ---------- থিম ---------- */
+function setTheme(t){
+  document.documentElement.dataset.theme=t;
+  document.querySelectorAll('.theme button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===t));
+  try{localStorage.setItem('theme',t)}catch(e){}
+}
+let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+document.querySelectorAll('.theme button').forEach(b=>b.onclick=()=>setTheme(b.dataset.t));
+
+/* ---------- শুরু ---------- */
+setKanji(kanji);
+sync();
+vinfo();
+</script>
+</body>
+</html>
